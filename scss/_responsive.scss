@@ -1,0 +1,30 @@
+.subir {
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    left: 40PX;
+    bottom: 20px;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 0 0 5px #636363;
+    background-color: rgba(37, 114, 49, 0.123);
+    border-radius: 20px;
+  
+    &:hover {
+      background-color: rgba(37, 114, 49, 0.5);
+      transform: scale(1.1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-toggler {
+      display: block !important;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    header {
+      text-align: center;
+    }
+  }
+  

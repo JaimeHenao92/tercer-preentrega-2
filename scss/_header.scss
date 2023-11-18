@@ -1,0 +1,41 @@
+header {
+    margin: 0px;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 5px;
+    border-bottom: 5px solid black;
+    text-align: center;
+    line-height: 0px;
+    height: auto;
+  }
+  
+  header nav a:hover{
+    background-color: rgb(255, 217, 147);
+    border-radius: 10px;
+    box-shadow: 0 10px 15px  #888;}
+    
+
+  .logo {
+    float: left;
+    width: 300px;
+  }
+  
+  nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 80px 20px;
+    font-weight: bolder;
+    line-height: 20px;
+    font-size: 25px;
+ 
+  }
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(37, 114, 48);
+    font-weight: bolder;}
+  
+  
