@@ -1,12 +1,14 @@
-.testimonios-sostenible1 {
-    width: 350px;
-    height: 300px;
-    border-radius: 50px;
+ @mixin hoja{
+  width: 350px;
+  height: 300px;
+  border-radius: 30px;
+ }
+ .testimonios-sostenible1 {
+    
+  @include hoja
   }
   
   .sostenible2 {
-    width: 350px;
-    height: 300px;
-    border-radius: 20px;
+    @include hoja
   }
   
