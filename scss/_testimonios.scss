@@ -1,6 +1,6 @@
  @mixin hoja{
-  width: 350px;
-  height: 300px;
+  width: 300px;
+  height: 200px;
   border-radius: 30px;
  }
  .testimonios-sostenible1 {
@@ -12,3 +12,6 @@
     @include hoja
   }
   
+  .testimoinos .p{
+    margin: 100px;
+  }

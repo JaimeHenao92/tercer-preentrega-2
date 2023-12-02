@@ -21,21 +21,21 @@ main {
 h1 {
   text-align: center;
   color: rgb(37, 114, 48);
-  padding: 0px;
+  padding: 30px;
   font-size: 50px;
 }
 
 h2 {
   text-align: center;
   color: rgb(37, 114, 48);
-  padding: 49px;
+  padding: px;
   font-size: 30px;
 }
 
 p {
-  margin: 10px;
+  margin: 20px;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   color: black;
 }
 
@@ -75,15 +75,15 @@ header nav a:hover {
 
 .logo {
   float: left;
-  width: 250px;
+  width: 150px;
   align-items: center;
 }
 
 nav ul li {
   list-style: none;
-  margin: 30px 20px;
-  line-height: 20px;
-  font-size: 25px;
+  margin: 20px 20px;
+  line-height: 15px;
+  font-size: 13px;
   display: inline-block;
   font-weight: bolder;
 }
@@ -103,16 +103,12 @@ section {
   justify-content: space-around;
 }
 
-.row {
-  text-align: center;
-}
-
 .tarjeta {
-  margin: 40px;
-  width: 360px;
+  margin: 20px;
+  width: 300px;
   height: 1000px;
   background-color: rgba(179, 179, 105, 0.527);
-  border: 5px solid rgb(37, 114, 48);
+  border: 2px solid rgb(37, 114, 48);
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -121,11 +117,12 @@ section {
 
 .tarjeta2 {
   align-items: center;
-  margin: 40px;
-  width: 320px;
-  height: 390px;
+  margin: 10px;
+  width: 300px;
+  height: 120px;
+  padding: 15px;
   background-color: rgba(133, 135, 136, 0.212);
-  border: 5px solid rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -134,7 +131,7 @@ section {
 
 .tarjeta__img1, .tarjeta__img2, .tarjeta__img3, .tarjeta__img4, .tarjeta__img5, .tarjeta__img6 {
   width: 100%;
-  height: 500px;
+  height: 300px;
   background-color: rgba(70, 69, 69, 0.479);
   background-size: cover;
   margin-bottom: 25px;
@@ -146,7 +143,7 @@ section {
 }
 
 .tarjeta__img2 {
-  background-image: url(../fotos/formas.png);
+  background-image: url(../fotos/estrategia.jpg);
 }
 
 .tarjeta__img3 {
@@ -154,7 +151,8 @@ section {
 }
 
 .tarjeta__img4 {
-  background-image: url(../fotos/AGUA.jpg);
+  background-image: url(../fotos/agua.jpg);
+  object-fit: cover;
 }
 
 .tarjeta__img5 {
@@ -167,30 +165,35 @@ section {
 
 .tarjeta__title {
   color: rgb(37, 114, 48);
-  text-align: center;
+  text-align: inherit;
+  font-size: 20px;
 }
 
 .tarjeta__desc {
-  font-size: 15px;
+  font-size: 10px;
   margin: 10px;
 }
 
 .mapa {
-  width: 400px;
+  width: 300px;
   height: 350px;
   border-radius: 20px;
 }
 
 .testimonios-sostenible1 {
-  width: 350px;
-  height: 300px;
+  width: 300px;
+  height: 200px;
   border-radius: 30px;
 }
 
 .sostenible2 {
-  width: 350px;
-  height: 300px;
+  width: 300px;
+  height: 200px;
   border-radius: 30px;
+}
+
+.testimoinos .p {
+  margin: 100px;
 }
 
 .label {

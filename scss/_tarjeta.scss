@@ -14,31 +14,30 @@ section {
     justify-content: space-around;
   }
 
-.row{
-  text-align: center;
-}
+
 .tarjeta {
-    margin: 40px;
-    width: 360px;
+    margin: 20px;
+    width: 300px;
     height: 1000px;
     background-color: rgba(179, 179, 105, 0.527);
-    border: 5px solid rgb(37, 114, 48);
+    border: 2px solid rgb(37, 114, 48);
     @include arbol;
   }
   
   .tarjeta2 {
     align-items: center;
-    margin: 40px;
-    width: 320px;
-    height: 390px;
+    margin: 10px;
+    width: 300px;
+    height: 120px;
+    padding: 15px;
     background-color: rgba(133, 135, 136, 0.212);
-    border: 5px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
     @include arbol;
   }
   
   .tarjeta__img1, .tarjeta__img2, .tarjeta__img3, .tarjeta__img4, .tarjeta__img5, .tarjeta__img6 {
     width: 100%;
-    height: 500px;
+    height: 300px;
     background-color: rgba(70, 69, 69, 0.479);
     background-size: cover;
     margin-bottom: 25px;
@@ -47,10 +46,11 @@ section {
   
   .tarjeta__img1 {
     background-image: url(../fotos/terraza.jpg);
+    
   }
   
   .tarjeta__img2 {
-    background-image: url(../fotos/formas.png);
+    background-image: url(../fotos/estrategia.jpg);
   }
   
   .tarjeta__img3 {
@@ -59,6 +59,7 @@ section {
   
   .tarjeta__img4 {
     background-image: url(../fotos/agua.jpg);
+    object-fit: cover;
   }
   
   .tarjeta__img5 {
@@ -71,11 +72,12 @@ section {
   
   .tarjeta__title {
     color: rgb(37, 114, 48);
-    text-align: center;
+    text-align: inherit;
+    font-size: 20px;
   }
   
   .tarjeta__desc {
-    font-size: 15px;
+    font-size: 10px;
     margin: 10px;
   }
   
