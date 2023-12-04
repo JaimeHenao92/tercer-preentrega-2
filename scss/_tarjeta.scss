@@ -85,8 +85,7 @@ section {
   .carousel-inner img{
 
     align-items: center;
-    width: 500px;
-    height: 600px;
+    object-fit: cover;
     border-radius: 50px; 
     
   }
