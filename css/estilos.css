@@ -207,6 +207,33 @@ section {
   font-weight: bolder;
   color: rgb(37, 114, 48);
 }
+.cotizacion {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.panel-desgloce {
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.5);
+  box-shadow: 4px 2px 20px lightgray;
+  max-width: 480px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: rgb(37, 114, 48);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
 
 input[type=text], textarea {
   display: block;
@@ -244,6 +271,7 @@ input[type=text], textarea {
   header {
     text-align: center;
   }
+
 }
 footer {
   margin: 0px;
