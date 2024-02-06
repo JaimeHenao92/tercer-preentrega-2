@@ -4,8 +4,7 @@ class Prestamo {
         this.plazo = plazo;
         this.interes = interes;
     }}
-
-calcularcuota(){
+function calcularcuota() {
     let couta = (this.monto * this.interes) / this.plazo
     return couta
 }

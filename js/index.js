@@ -53,4 +53,4 @@ location.href = "cotizacion.html";
 btnCalcular.addEventListener("click", ()=> calcularPrestamo())
 
 // Inicializamos la aplicación
-cargarDestinos();
+cargarBancos();
