@@ -1,49 +1,38 @@
-const btnContratar = document.querySelector("#btnContratar");
+const btnContratar = document.querySelector("button.button-contratar");
 
-// Enlace con los elementos HTML del detalle del préstamo
-const spanMonto = document.querySelector("#spanMontoDinero");
-const spanDestino = document.querySelector("#spanDestino");
-const spanTasa = document.querySelector("#spanTasa");
-const spanPlazo = document.querySelector("#spanPlazo");
-const spanCuota = document.querySelector("#spanCuota");
-const spanTotalDevolver = document.querySelector("#spanTotalDevolver");
-const divMensajeFinal = document.querySelector("#panelMensajeFinal");
+// me enlazo con los elementos HTML del detalle del préstamo
+const spanMonto = document.querySelector("span.label-monto");
+const spanDestino = document.querySelector("span.label-destino");
+const spanTasa = document.querySelector("span.label-intereses");
+const spanPlazo = document.querySelector("span.label-plazo");
+const spanCuota = document.querySelector("span.label-cuota");
+const spanTotalDevolver = document.querySelector("span.label-total");
+const divMensajeFinal = document.querySelector("div#panelMensaje");
 
-// Lógica
-class DetallePrestamo {
-    constructor(datosPrestamo) {
-        this.datosPrestamo = datosPrestamo;
-    }
+// lógica
+function recuperarDeLS() {
+  const datosDelPrestamo = JSON.parse(localStorage.getItem("DatosDelPrestamo"));
+  console.log(datosDelPrestamo);
 
-    mostrarDetalle() {
-        spanMonto.textContent = `$ ${this.datosPrestamo.monto.toLocaleString("es-Co")}`;
-        spanDestino.textContent = this.datosPrestamo.destino;
-        spanTasa.textContent = ((this.datosPrestamo.interes - 1) * 100).toFixed(2);
-        spanPlazo.textContent = this.datosPrestamo.meses;
-        spanCuota.textContent = this.datosPrestamo.cuota.toFixed(2);
-        spanTotalDevolver.textContent = (this.datosPrestamo.cuota * this.datosPrestamo.meses).toLocaleString("es-AR");
-    }
-}
+  // si datosDelPrestamo no tiene info (null)
+  // redireccionar al usuario a index.html
 
-function recuperarDeLocalStorage() {
-    const datosDelPrestamo = JSON.parse(localStorage.getItem("DatosDelPrestamo"));
-
-    // Si datosDelPrestamo no tiene información (null)
-    // redireccionar al usuario a index.html
-    if (!datosDelPrestamo) {
-        location.href = "index.html";
-    }
-
-    const detallePrestamo = new DetallePrestamo(datosDelPrestamo);
-    detallePrestamo.mostrarDetalle();
+  spanMonto.textContent = "$ " + datosDelPrestamo.monto.toLocaleString("es-CO");
+  spanDestino.textContent = datosDelPrestamo.destino;
+  spanTasa.textContent = (datosDelPrestamo.interes - 1).toFixed(2);
+  spanPlazo.textContent = datosDelPrestamo.plazo;
+  spanCuota.textContent = datosDelPrestamo.cuota.toFixed(2);
+  spanTotalDevolver.textContent = (
+    datosDelPrestamo.cuota * datosDelPrestamo.plazo
+  ).toLocaleString("es-Co");
 }
 
 // Eventos
 btnContratar.addEventListener("click", () => {
-    divMensajeFinal.classList.add("transition-div-show");
-    localStorage.removeItem("DatosDelPrestamo");
-    btnContratar.setAttribute("disabled", true);
+  divMensajeFinal.classList.add("transition-div-show");
+  localStorage.removeItem("DatosDelPrestamo");
+  btnContratar.setAttribute("disabled", "true");
 });
 
 // Inicializar la pantalla
-recuperarDeLocalStorage();
+recuperarDeLS();
