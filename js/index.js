@@ -1,9 +1,9 @@
 const arrayBancos = [
-  { id: 1, descripcion: "BANCOLOMBIA", interes: 18.21 },
-  { id: 2, descripcion: "BBVA", interes: 13.8 },
-  { id: 3, descripcion: "Banco de Occidente", interes: 10.21 },
-  { id: 4, descripcion: "Banco Agrario", interes: 8.1 },
-  { id: 5, descripcion: "Banco de Bogota ", interes: 11.2 },
+  { id: 1, descripcion: "BANCOLOMBIA", interes: 1.1821 },
+  { id: 2, descripcion: "BBVA", interes: 1.138 },
+  { id: 3, descripcion: "Banco de Occidente", interes: 1.1021 },
+  { id: 4, descripcion: "Banco Agrario", interes: 1.081 },
+  { id: 5, descripcion: "Banco de Bogota ", interes: 1.112 },
 ];
 
 const inputMonto = document.querySelector("#montoDinero");
@@ -32,40 +32,49 @@ function obtenerInteresPorDescripcion(descripcion) {
 
 function guardarEnLocalStorage(monto, plazo, interes, cuota, destino) {
   const datosDelPrestamo = {
-    monto,
-    plazo,
-    interes,
-    cuota,
-    destino,
+    monto : monto,
+    plazo : plazo,
+    interes : interes,
+    cuota : cuota,
+    destino : destino
   };
 
   localStorage.setItem("DatosDelPrestamo", JSON.stringify(datosDelPrestamo));
 }
 
-const calcularCuota = (monto, interes, plazo) => {
-  const couta = (monto * interes) / plazo;
-  return couta;
-};
+
 
 function calcularPrestamo() {
-  const monto = parseInt(inputMonto.value);
-  console.log(monto);
+  const monto = parseFloat(inputMonto.value);
   const plazo = parseInt(inputPlazo.value);
   const interes = obtenerInteresPorDescripcion(selectBancos.value);
-  const cuotaMensual = calcularCuota(monto, plazo, interes);
-  console.log(cuotaMensual);
+  const destino = selectBancos.value
+  creditoSolicitado = new Prestamo (monto, plazo, interes)
+
+  let cuota = creditoSolicitado.calcularcuota()
 
   guardarEnLocalStorage(
     monto,
     plazo,
     interes,
-    cuotaMensual,
-    selectBancos.value
+    cuota,
+    destino,
   );
   location.href = "cotizacion.html";
 }
 
-btnCalcular.addEventListener("click", () => calcularPrestamo());
+// Evento
+btnCalcular.addEventListener("click", () => {
+  let caso1=inputMonto.value;
+  let caso2=inputPlazo.value;
+  let caso3=selectBancos.value
+  if (caso1 !== null && caso2 !== null && caso3 !== "Elige una opción, por favor") {
+    calcularPrestamo()
+  }
+  else {
+    divMensaje.classList.add("transition-div-show");
+  }
+});
 
 // Inicializamos la aplicación
 cargarBancos();

@@ -1,36 +1,31 @@
-const btnContratar = document.querySelector("button.button-contratar");
 
 // me enlazo con los elementos HTML del detalle del préstamo
-const spanMonto = document.querySelector("span.label-monto");
-const spanDestino = document.querySelector("span.label-destino");
-const spanTasa = document.querySelector("span.label-intereses");
-const spanPlazo = document.querySelector("span.label-plazo");
-const spanCuota = document.querySelector("span.label-cuota");
-const spanTotalDevolver = document.querySelector("span.label-total");
+const spanMonto = document.querySelector("span.monto");
+const spanDestino = document.querySelector("span.destino");
+const spanTasa = document.querySelector("span.intereses");
+const spanPlazo = document.querySelector("span.plazo");
+const spanCuota = document.querySelector("span.cuota");
+const spanTotalDevolver = document.querySelector("span.total");
+const btnContratar = document.querySelector("button.button-contratar");
 const divMensajeFinal = document.querySelector("div#panelMensaje");
 
 // lógica
 function recuperarDeLS() {
-  const datosDelPrestamo = JSON.parse(localStorage.getItem("DatosDelPrestamo"));
-  console.log(datosDelPrestamo);
-
-  // si datosDelPrestamo no tiene info (null)
-  // redireccionar al usuario a index.html
-
-  spanMonto.textContent = "$ " + datosDelPrestamo.monto.toLocaleString("es-CO");
-  spanDestino.textContent = datosDelPrestamo.destino;
-  spanTasa.textContent = (datosDelPrestamo.interes - 1).toFixed(2);
-  spanPlazo.textContent = datosDelPrestamo.plazo;
-  spanCuota.textContent = datosDelPrestamo.cuota.toFixed(2);
-  spanTotalDevolver.textContent = (
-    datosDelPrestamo.cuota * datosDelPrestamo.plazo
-  ).toLocaleString("es-Co");
+  const dtsDelPrestamo = JSON.parse(localStorage.getItem("DatosDelPrestamo"));
+  if (dtsDelPrestamo !== "" && dtsDelPrestamo !== null) {
+      spanMonto.textContent = dtsDelPrestamo.monto.toLocaleString("es-CO");
+      spanDestino.textContent = dtsDelPrestamo.destino;
+      spanTasa.textContent = parseFloat(((dtsDelPrestamo.interes - 1)*100).toFixed(2));
+      spanPlazo.textContent = parseInt(dtsDelPrestamo.plazo);
+      spanCuota.textContent = parseFloat(dtsDelPrestamo.cuota.toFixed(2));
+      spanTotalDevolver.textContent = parseFloat(((dtsDelPrestamo.cuota * dtsDelPrestamo.plazo).toFixed(2)).toLocaleString("es-Co"));
+  }
 }
 
-// Eventos
+//Eventos
 btnContratar.addEventListener("click", () => {
   divMensajeFinal.classList.add("transition-div-show");
-  localStorage.removeItem("DatosDelPrestamo");
+  localStorage.removeItem("dtssDelPrestamo");
   btnContratar.setAttribute("disabled", "true");
 });
 

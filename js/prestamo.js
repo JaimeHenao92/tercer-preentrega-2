@@ -1,12 +1,11 @@
 class Prestamo {
   constructor(monto, plazo, interes) {
-    this.monto = monto;
-    this.plazo = plazo;
-    this.interes = interes;
+    this.monto = monto || 1;
+    this.plazo = plazo || 1;
+    this.interes = interes || 1;
   }
+calcularcuota(){
+  let cuota = (this.monto * this.interes) / this.plazo;
+  return cuota;
 }
-
-const calcularcuota = () => {
-  let couta = (this.monto * this.interes) / this.plazo;
-  return couta;
-};
+}
