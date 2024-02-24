@@ -7,8 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css">
     <script src="../js/prestamo.js"></script>
     <script defer src="../js/cotizacion.js"></script>
+    
 </head>
 <body>
     <header>
@@ -16,9 +19,19 @@
         <a href="../index.html" class="logo">
           <img class="logo" src="../fotos/logo.png"alt="logo">
          </a>
-      
-        
+         <nav class="navbar navbar-expand-lg Nav">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"></a>
+            
+  
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul>
+                    <li><a href="../html/prestamos.html">prestamos</a></li>
+                </ul>
+            </div>
+    </nav>
        </header>
+       
 
     <div class="panel-desgloce">
         <h2>Detalle del préstamo solicitado</h2>
@@ -29,15 +42,16 @@
         <p>Banco Elegido: <span class="destino">-----</span></p>
         <p>Tasa de interés aplicable: <span class="intereses">----</span><strong> %</strong></p>
         <p>Plazo de devolución: <span class="plazo">---- </span> <strong>meses</strong></p>
-        <p>Cuota mensual: $<span class="cuota">----</span></p>
-        <p>Total a devolver: $ <span class="total">----</span></p>
+        <p>Cuota mensual: <span class="cuota">----</span></p>
+        <p>Total a devolver:  <span class="total">----</span></p>
+        
  
         <div class="centrar-elementos">
-            <button class="button-contratar" type="button">Contratar</button>
+            <button class="button-contratar" type="button">CONTRATAR</button>
         </div>
     </div>
-    <div id="panelMensaje" class="centrar-elementos notification-div">
-        <p>La opercación se realizó con exitos, un representante de la firma se comunicara con usted para pactar lo restante. Gracias!</p>
+    
+       
     </div>
 </body>
 </html>

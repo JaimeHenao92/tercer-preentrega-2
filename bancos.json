@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "descripcion": "Bancolombia",
+        "interes": 1.1821
+    },
+    {
+        "id": 2,
+        "descripcion": "BBVA",
+        "interes": 1.138
+    },
+    {
+        "id": 3,
+        "descripcion": "Banco de Occidente",
+        "interes": 1.1021
+    },
+    {
+        "id": 4,
+        "descripcion": "Banco Agrario",
+        "interes": 1.081
+    },
+    {
+        "id": 5,
+        "descripcion": "Banco de Bogota ",
+        "interes": 1.112
+    }
+]
